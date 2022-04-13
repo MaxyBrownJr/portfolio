@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset = "utf-8">
+    <title>JavaScript Face</title>
+
+    <style>
+
+      body {
+        text-align: center;
+        background-color: midnightblue;
+        color: paleturquoise;
+        font-family: Helvetica, Arial, sans-serif;
+      }
+
+    </style>
+
+    <script>
+
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+    ctx.stroke();
+
+    </script>
+
+  </head>
+
+  <body>
+
+    <h1>This is a Face, Drawn using JavaScript in Canvas</h1>
+    <canvas id="myCanvas" width="300" height="300"></canvas>
+
+
+  </body>
+
+</html>
