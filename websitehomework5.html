@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset = "utf-8">
+    <title>Random Rectangle Generator</title>
+
+    <style>
+
+      body {
+        text-align: center;
+        background-color: darkslategrey;
+        color: goldenrod;
+        font-family: Helvetica, Arial, sans-serif;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <h1>The <i>Random</i> Rectangle Generator</h1>
+
+    <canvas id="myCanvas" width="600" height="600" style="border:2px solid #ffffcc;">
+		Your browser does not support the HTML canvas tag.
+		</canvas>
+
+    <script>
+
+      var c = document.getElementById("myCanvas");
+      var ctx = c.getContext("2d");
+
+      function Rect_Generator(xpos, ypos, width, height)
+      {
+        ctx.beginPath();
+        ctx.rect(xpos, ypos, width, height);
+        ctx.stroke();
+        ctx.fillStyle = "#" +  Math.floor(Math.random()*0xFFFFFF).toString(16);
+				ctx.fill();
+      }
+
+      function Random_Rect_Generator()
+			{
+			  Rect_Generator(Math.floor(Math.random() * 600),Math.floor(Math.random() * 600),Math.floor(Math.random() * 250),Math.floor(Math.random() * 250));
+			}
+
+		  setInterval(Random_Rect_Generator,90);
+
+    </script>
+
+  </body>
+
+</html>
