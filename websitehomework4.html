@@ -30,7 +30,19 @@
       var c = document.getElementById("myCanvas");
       var ctx = c.getContext("2d");
       ctx.beginPath();
-      ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+      ctx.arc(150, 150, 80, 0, 2 * Math.PI);
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.rect(110, 110, 25, 60);
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.rect(165, 110, 25, 60);
+      ctx.stroke();
+
+      ctx.moveTo(110, 190);
+      ctx.lineTo(190, 190);
       ctx.stroke();
 
     </script>
