@@ -1,74 +1,135 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
+<head>
 
-    <meta charset = "utf-8">
-    <title>Portfolio</title>
+  <meta charset="utf-8">
 
-    <link rel="stylesheet" href="style.css">
+  <title>Portfolio Website: Maxy Brown</title>
 
     <style>
 
-      body
-      {
-        text-align: center;
-        background-color: midnightblue;
-        color: paleturquoise;
-        font-family: Helvetica, Arial, sans-serif;
-      }
+        h1 {color: cornflowerblue; font-size:25px;}
+        * {box-sizing: border-box;}
 
-    </style>
+        body
+        {
+          margin: 0;
+          font-family: Arial;
+          background-color: darkslategrey;
+          color: goldenrod;
+          text-align: center;
+        }
 
+        #header
+        {
+          text-align: center;
+          padding: 32px;
+        }
+
+        #row
+        {
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+          padding: 0 4px;
+        }
+
+        #column
+        {
+          -ms-flex: 25%;
+          flex: 25%;
+          max-width: 25%;
+          padding: 0 4px;
+        }
+
+        #column img
+        {
+          opacity: : .85;
+          margin-top: 8px;
+          vertical-align: middle;
+          width: 100%;
+        }
+
+        #column hover img
+        {
+          opacity: : 1;
+          margin-top: 8px;
+          vertical-align: middle;
+          width: 100%;
+        }
+
+        @media screen and (max-width: 800px)
+        {
+          #column
+          {
+            -ms-flex: 50%;
+            flex: 50%;
+            max-width: 50%;
+          }
+        }
+
+        @media screen and (max-width: 600px)
+        {
+          #column
+          {
+            -ms-flex: 100%;
+            flex: 100%;
+            max-width: 100%;
+          }
+        }
+
+      </style>
   </head>
 
   <body>
 
-    <h1>Portfolio Website</h1>
+    <h1>Portfolio Website: Maxy Brown</h1>
+    <div class="header">
+    <p><b>CONTACT</b><br>Email: maxybrownjr@gmail.com<br>Phone: 410-624-6659</p>
+    <h3>Graduation Date: May 2023</h3>
+    </div>
 
     <br>
 
     <div id="row">
       <div id="column">
-        <a href="/img/0.png"><img id="image" src="/img/0.png"></a>
-        <a href="/img/1.png"><img id="image" src="/img/1.png"></a>
-        <a href="/img/2.png"><img id="image" src="/img/2.png"></a>
-        <a href="/img/3.png"><img id="image" src="/img/3.png"></a>
-        <a href="/img/4.png"><img id="image" src="/img/4.png"></a>
-        <a href="/img/5.png"><img id="image" src="/img/5.png"></a>
-        <a href="/img/6.png"><img id="image" src="/img/6.png"></a>
-        <a href="/img/7.png"><img id="image" src="/img/7.png"></a>
-        <a href="/img/8.png"><img id="image" src="/img/8.png"></a>
-        <a href="/img/9.png"><img id="image" src="/img/8.png"></a>
+        <a href="portfolio/0.png"><img id="image" src="portfolio/0.png"></a>
+        <a href="portfolio/1.png"><img id="image" src="portfolio/1.png"></a>
+        <a href="portfolio/2.png"><img id="image" src="portfolio/2.png"></a>
+        <a href="portfolio/3.png"><img id="image" src="portfolio/3.png"></a>
+        <a href="portfolio/19.png"><img id="image" src="portfolio/19.png"></a>
+        <a href="portfolio/20.png"><img id="image" src="portfolio/20.png"></a>
       </div>
-    </div>
 
-    <div id="row">
       <div id="column">
-        <a href="/img/10.png"><img id="image" src="/img/10.png"></a>
-        <a href="/img/11.png"><img id="image" src="/img/11.png"></a>
-        <a href="/img/12.png"><img id="image" src="/img/12.png"></a>
-        <a href="/img/13.png"><img id="image" src="/img/13.png"></a>
-        <a href="/img/14.png"><img id="image" src="/img/14.png"></a>
-        <a href="/img/15.png"><img id="image" src="/img/15.png"></a>
-        <a href="/img/16.png"><img id="image" src="/img/16.png"></a>
-        <a href="/img/17.png"><img id="image" src="/img/17.png"></a>
-        <a href="/img/18.png"><img id="image" src="/img/18.png"></a>
+        <a href="portfolio/4.png"><img id="image" src="portfolio/4.png"></a>
+        <a href="portfolio/5.png"><img id="image" src="portfolio/5.png"></a>
+        <a href="portfolio/6.png"><img id="image" src="portfolio/6.png"></a>
+        <a href="portfolio/7.png"><img id="image" src="portfolio/7.png"></a>
+        <a href="portfolio/23.png"><img id="image" src="portfolio/23.png"></a>
+        <a href="portfolio/24.png"><img id="image" src="portfolio/24.png"></a>
       </div>
-    </div>
 
-    <div id="row">
       <div id="column">
-        <a href="/img/19.png"><img id="image" src="/img/19.png"></a>
-        <a href="/img/20.png"><img id="image" src="/img/20.png"></a>
-        <a href="/img/21.png"><img id="image" src="/img/21.png"></a>
-        <a href="/img/22.png"><img id="image" src="/img/22.png"></a>
-        <a href="/img/23.png"><img id="image" src="/img/23.png"></a>
-        <a href="/img/24.png"><img id="image" src="/img/24.png"></a>
-        <a href="/img/25.png"><img id="image" src="/img/25.png"></a>
-        <a href="/img/26.png"><img id="image" src="/img/26.png"></a>
+        <a href="portfolio/8.png"><img id="image" src="portfolio/8.png"></a>
+        <a href="portfolio/9.png"><img id="image" src="portfolio/9.png"></a>
+        <a href="portfolio/10.png"><img id="image" src="portfolio/10.png"></a>
+        <a href="portfolio/11.png"><img id="image" src="portfolio/11.png"></a>
+        <a href="portfolio/26.png"><img id="image" src="portfolio/26.png"></a>
+        <a href="portfolio/22.png"><img id="image" src="portfolio/22.png"></a>
       </div>
-    </div>
+
+      <div id="column">
+        <a href="portfolio/12.png"><img id="image" src="portfolio/12.png"></a>
+        <a href="portfolio/13.png"><img id="image" src="portfolio/13.png"></a>
+        <a href="portfolio/14.png"><img id="image" src="portfolio/14.png"></a>
+        <a href="portfolio/15.png"><img id="image" src="portfolio/15.png"></a>
+        <a href="portfolio/16.png"><img id="image" src="portfolio/16.png"></a>
+        <a href="portfolio/21.png"><img id="image" src="portfolio/21.png"></a>
+        <a href="portfolio/25.png"><img id="image" src="portfolio/25.png"></a>
+      </div>
 
   </body>
 
