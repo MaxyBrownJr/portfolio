@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <style>
+
+      h1 {color: cornflowerblue; font-size:25px;}
+      * {box-sizing: border-box;}
+
+      body
+      {
+        margin: 0;
+        font-family: Arial;
+        background-color: darkslategrey;
+        color: goldenrod;
+        text-align: center;
+      }
+
+      img
+      {
+        opacity: : 1;
+        margin-top: 8px;
+        vertical-align: middle;
+        width: 60%;
+      }
+
+    </style>
+
+    <script>
+
+      var images = ["portfolio/0.png", "portfolio/1.png"];
+      var c_img = 0;
+
+      function nextImage()
+      {
+        if(c_img == images.length - 1) {}
+        else
+        {
+          c_img += 1;
+          document.getElementById("img").src = images[c_img];
+        }
+      }
+
+      function backImage()
+      {
+        if (c_img == 0) {}
+        else
+        {
+          c_img -= 1;
+          document.getElementById("img").src = images[c_img];
+        }
+      }
+
+    </script>
+
+  </head>
+
+  <body>
+
+    <h1>Final Comic Website</h1>
+
+    <hr>
+
+    <img id="img" src="portfolio/0.png">
+    <br><br><br>
+    <button id="backbutton" onclick="backImage();">BACK</button>
+    <button onclick="nextImage();">NEXT</button>
+    <br><br><br>
+
+  </body>
+
+</html>
