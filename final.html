@@ -9,8 +9,7 @@
       h1 {color: cornflowerblue; font-size:25px;}
       * {box-sizing: border-box;}
 
-      body
-      {
+      body {
         margin: 0;
         font-family: Arial;
         background-color: darkslategrey;
@@ -18,8 +17,7 @@
         text-align: center;
       }
 
-      img
-      {
+      img {
         opacity: : 1;
         margin-top: 8px;
         vertical-align: middle;
@@ -32,24 +30,54 @@
 
       var images = ["comic/1.png", "comic/2.png", "comic/3.png", "comic/4.png"];
       var c_img = 0;
+      var next_hidden = false;
+      var back_hidden = true;
 
-      function nextImage()
-      {
-        if(c_img == images.length - 1) {}
-        else
+      function SetUp()
+      {document.getElementById("backbutton").style.visibility = "hidden";}
+
+      function nextImage() {
+        if (c_img == images.length - 2)
         {
-          c_img += 1;
-          document.getElementById("img").src = images[c_img];
+           document.getElementById("nextbutton").style.visibility = "hidden";
+           next_hidden = true;
         }
+        else if (back_hidden)
+        {
+          document.getElementById("backbutton").style.visibility = "visible";
+          back_hidden = false;
+        }
+        c_img += 1;
+        document.getElementById("img").src = images[c_img];
       }
 
-      function backImage()
-      {
-        if (c_img == 0) {}
-        else
+      function backImage() {
+        if (c_img == 1)
         {
-          c_img -= 1;
-          document.getElementById("img").src = images[c_img];
+          document.getElementById("backbutton").style.visibility = "hidden";
+          back_hidden = true;
+        }
+        else if (next_hidden)
+        {
+          document.getElementById("nextbutton").style.visibility = "visible";
+          next_hidden = false
+        }
+        c_img -= 1;
+        document.getElementById("img").src = images[c_img];
+      }
+
+      function showCoords(event) {
+        var x = event.clientX;
+        var y = event.clientY;
+        var ele = document.getElementById("img");
+        var width = ele.offsetWidth;
+        var height = ele.offsetHeight;
+        var half=(width/2);
+        if(x>half) {
+          if (c_img <= images.length - 2) {nextImage();}
+        }
+        else {
+          if (c_img > 0) {backImage();}
         }
       }
 
@@ -57,16 +85,17 @@
 
   </head>
 
-  <body>
+  <body onload="SetUp()">
 
     <h1>Final Comic Website</h1>
 
     <hr>
 
-    <img id="img" src="comic/1.png">
+    <img onclick="showCoords(event)" id="img" src="comic/1.png">
+
     <br><br><br>
     <button id="backbutton" onclick="backImage();">BACK</button>
-    <button onclick="nextImage();">NEXT</button>
+    <button id="nextbutton" onclick="nextImage();">NEXT</button>
     <br><br><br>
 
   </body>
