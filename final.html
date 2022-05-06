@@ -24,6 +24,45 @@
         width: 60%;
       }
 
+      .dropbtn {
+        background-color: goldenrod;
+        color: darkslategrey;
+        padding: 10px;
+        font-size: 10px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .dropbtn:hover, .dropbtn:focus {
+        background-color: #2980B9;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 60px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        align: center;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-content a:hover {background-color: #ddd}
+
+      .show {display:block;}
+
     </style>
 
     <script>
@@ -31,10 +70,35 @@
       var images = ["comic/1.png", "comic/2.png", "comic/3.png", "comic/4.png", "comic/5.png"];
       var c_img = 0;
       var next_hidden = false;
+      var set_page = 0;
       var back_hidden = true;
 
-      function SetUp()
-      {document.getElementById("backbutton").style.visibility = "hidden";}
+      function SetUp() {
+        document.getElementById("backbutton").style.visibility = "hidden";
+      }
+
+      function setImage(clicked_button) {
+        c_img = clicked_button.getAttribute("value");
+
+        if (c_img == images.length - 1) {
+           document.getElementById("nextbutton").style.visibility = "hidden";
+           next_hidden = true;
+        }
+        else if (next_hidden) {
+          document.getElementById("nextbutton").style.visibility = "visible";
+          next_hidden = false
+        }
+
+        if (c_img == 0) {
+          document.getElementById("backbutton").style.visibility = "hidden";
+          back_hidden = true;
+        }
+        else if (next_hidden) {
+          document.getElementById("backbutton").style.visibility = "visible";
+          back_hidden = false
+        }
+        document.getElementById("img").src = images[c_img];
+      }
 
       function nextImage() {
         if (c_img == images.length - 2)
@@ -81,6 +145,23 @@
         }
       }
 
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+
+      window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+      }
+
     </script>
 
   </head>
@@ -90,6 +171,23 @@
     <h1>Final Comic Website</h1>
 
     <hr>
+
+    <br>
+    <div class="dropdown">
+      <button onclick="myFunction()" class="dropbtn">Page List</button>
+      <div id="myDropdown" class="dropdown-content">
+        <button id="setbutton" onclick="setImage(this);" value="0">PAGE 1</button>
+        <br>
+        <button id="setbutton" onclick="setImage(this);" value="1">PAGE 2</button>
+        <br>
+        <button id="setbutton" onclick="setImage(this);" value="2">PAGE 3</button>
+        <br>
+        <button id="setbutton" onclick="setImage(this);" value="3">PAGE 4</button>
+        <br>
+        <button id="setbutton" onclick="setImage(this);" value="4">PAGE 5</button>
+      </div>
+    </div>
+    <br>
 
     <img onclick="showCoords(event)" id="img" src="comic/1.png">
 
