@@ -70,7 +70,6 @@
       var images = ["comic/1.png", "comic/2.png", "comic/3.png", "comic/4.png", "comic/5.png"];
       var c_img = 0;
       var next_hidden = false;
-      var set_page = 0;
       var back_hidden = true;
 
       function SetUp() {
@@ -94,6 +93,10 @@
           back_hidden = true;
         }
         else if (next_hidden) {
+          document.getElementById("backbutton").style.visibility = "visible";
+          back_hidden = false
+        }
+        else if (back_hidden) {
           document.getElementById("backbutton").style.visibility = "visible";
           back_hidden = false
         }
